@@ -1,13 +1,27 @@
 import { question } from 'readline-sync';
 
+type Operator = '+' | '-' | '*' | '/';
+
 function main(): void
 {
     const firstStr: string = question('Entrez votre nombre : \n');
     const operator: string = question('Entrez un operateur : \n');
     const secondStr: string = question('Entrez votre second numero: \n');
 
-    const op = isOperator(operator);
-    console.log(op);
+    const validInput: boolean = isNumber(firstStr) && isOperator(operator) && isNumber(secondStr);
+    console.log(validInput);
+
+    if (validInput)
+    {
+        const firstNum: number = parseInt(firstStr);
+        const secondNum: number = parseInt(secondStr);
+        const result = calculate(firstNum, operator as Operator, secondNum);
+    }
+    else 
+    {
+        console.log('\nentree non valide\n');
+        main()
+    }
 }
 
 function isOperator(operator: string): boolean
@@ -22,6 +36,11 @@ function isOperator(operator: string): boolean
         default : 
             return false;
     }
+}
+
+function calculate(firstNum: number, operator: Operator, secondNum: number)
+{
+    
 }
 
 function isNumber(str: string)
