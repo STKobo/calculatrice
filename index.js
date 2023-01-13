@@ -3,10 +3,21 @@ exports.__esModule = true;
 var readline_sync_1 = require("readline-sync");
 function main() {
     var firstStr = (0, readline_sync_1.question)('Entrez votre nombre : \n');
-    var operator = (0, readline_sync_1.question)('Entrez un opérateur : \n');
-    var secondStr = (0, readline_sync_1.question)('Entrez votre second numéro: \n');
-    var firstNum = isNumber(firstStr);
-    console.log(firstNum);
+    var operator = (0, readline_sync_1.question)('Entrez un operateur : \n');
+    var secondStr = (0, readline_sync_1.question)('Entrez votre second numero: \n');
+    var op = isOperator(operator);
+    console.log(op);
+}
+function isOperator(operator) {
+    switch (operator) {
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            return true;
+        default:
+            return false;
+    }
 }
 function isNumber(str) {
     var maybeNum = parseInt(str);
