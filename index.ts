@@ -16,6 +16,7 @@ function main(): void
         const firstNum: number = parseInt(firstStr);
         const secondNum: number = parseInt(secondStr);
         const result = calculate(firstNum, operator as Operator, secondNum);
+        console.log(result);
     }
     else 
     {
@@ -40,7 +41,17 @@ function isOperator(operator: string): boolean
 
 function calculate(firstNum: number, operator: Operator, secondNum: number)
 {
-    
+    switch(operator)
+    {
+        case '+':
+            return firstNum + secondNum;
+        case '-': 
+            return firstNum - secondNum;
+        case '*': 
+            return firstNum * secondNum;
+        case '/':
+            return firstNum / secondNum;
+    }
 }
 
 function isNumber(str: string)

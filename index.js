@@ -7,6 +7,16 @@ function main() {
     var secondStr = (0, readline_sync_1.question)('Entrez votre second numero: \n');
     var validInput = isNumber(firstStr) && isOperator(operator) && isNumber(secondStr);
     console.log(validInput);
+    if (validInput) {
+        var firstNum = parseInt(firstStr);
+        var secondNum = parseInt(secondStr);
+        var result = calculate(firstNum, operator, secondNum);
+        console.log(result);
+    }
+    else {
+        console.log('\nentree non valide\n');
+        main();
+    }
 }
 function isOperator(operator) {
     switch (operator) {
@@ -17,6 +27,18 @@ function isOperator(operator) {
             return true;
         default:
             return false;
+    }
+}
+function calculate(firstNum, operator, secondNum) {
+    switch (operator) {
+        case '+':
+            return firstNum + secondNum;
+        case '-':
+            return firstNum - secondNum;
+        case '*':
+            return firstNum * secondNum;
+        case '/':
+            return firstNum / secondNum;
     }
 }
 function isNumber(str) {
