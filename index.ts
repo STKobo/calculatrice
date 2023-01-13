@@ -6,7 +6,14 @@ function main(): void
     const operator: string = question('Entrez un opérateur : \n');
     const secondStr: string = question('Entrez votre second numéro: \n');
 
-    console.log(firstStr, operator, secondStr);
+    
+}
+
+function isNumber(str: string)
+{
+    const maybeNum = parseInt(str); 
+    const isNum: boolean = Boolean(isNaN(maybeNum));
+    return isNum;
 }
 
 main();

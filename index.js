@@ -3,6 +3,8 @@ exports.__esModule = true;
 var readline_sync_1 = require("readline-sync");
 function main() {
     var firstStr = (0, readline_sync_1.question)('Entrez votre nombre : \n');
-    console.log(firstStr);
+    var operator = (0, readline_sync_1.question)('Entrez un opérateur : \n');
+    var secondStr = (0, readline_sync_1.question)('Entrez votre second numéro: \n');
+    console.log(firstStr, operator, secondStr);
 }
 main();
